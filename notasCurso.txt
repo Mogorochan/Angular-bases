@@ -1,0 +1,26 @@
+Tener presente la página de documentación, para estar actualizada con los comandos. 
+Hasta la version: 14.2.3, así se levantaba un proyecto en angular
+
+    npm install -g @angular/cli
+
+Comandos para ver la versión: ng version ó ng v
+Creación:
+    ng new my-first-project
+    cd 01-bases
+    ng serve
+Recordar guardar el Node_modules en gitIgnore, ya que al clonarlo en otro lugar, 
+de igual modo debemos instalar el paquete de Node (npm init) y, en este caso,
+de angular(npm install -g @angular/cli):
+    .gitignore (se crea la carpeta)
+    /node_modules (se escribe este comando)
+EN ANGULAR NO ES NECESARIO.
+
+/*******Pasar a un directorio*********/
+se llama al comando CD y se escribe el nombre del directorio:
+    cd 01-bases  es lo mismo que:
+    cd \Users\tic.medellin\Documents\GitHub\Angular-bases\01-bases>
+
+/****Levantar el servidor***/
+ng serve
+ng serve -o //apenas esté listo, se abrirá 
+
