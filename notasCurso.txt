@@ -24,3 +24,45 @@ se llama al comando CD y se escribe el nombre del directorio:
 ng serve
 ng serve -o //apenas esté listo, se abrirá 
 
+/***AppComponent***/
+Aquí podemos manipular el decorador @Component, este recibe un objeto como
+argumento. Es importante definir los argumentos del mismo:
+Selector recibe el app routing que conecta el index html a los diferentes componentes de la app.
+templateUrl:  se puede escribir la ruta.
+template: se escribe el código de inicio directamente. Se aconseja que sí 
+se pasa de mas de 3 líneas, se cree el AppComponent.html.
+
+Se aconseja que la lógica se mantega en el AppComponent y no en el template
+
+/***Creación de un componente****/
+Siempre describir la función del componente. 
+    contador.component.ts 
+Si es un nombre compuesto, separarlo por guiones:
+    acumulador-simple.component.ts
+-Se debe agregar la ruta de nuestro componente creado en:
+    app.component.html
+aplicando la siguiente sintaxis:
+    <app-acumulador></app-acumulador>
+-Se debe importar y agregar el componente en app.module.ts:
+    import { AcumuladorComponent } from './acumulador.component';
+En el  @NgModule, en las declarations:
+    AcumuladorComponent
+**También se pueden crear componentes de forma automática:
+    ng generate component nombre de archivo ruta 
+    ng g c nombre de archivo//versión simplificada
+Si se desea agregar dentro de otro componente:
+    ng g c componente/nombre de archivo
+    ng g c heroes/listado
+/*****Componentes del decorador @NgModule***/
+@NgModule({
+  declarations: [ // ACÁ VAN LOS COMPONENTES
+    AppComponent,
+    AcumuladorComponent
+  ],
+  imports: [//ACÁ VAN LOS MODULOS
+    BrowserModule
+  ],
+  providers: [], // ACÁ VAN LOS SERVICIOS
+  bootstrap: [AppComponent]
+})
+
