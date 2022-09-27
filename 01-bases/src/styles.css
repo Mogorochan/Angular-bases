@@ -42,3 +42,10 @@ button:focus{
 .p-1 {
   padding: 1px;
 }
+.warning{
+  color: #c9c911;
+}
+.info{
+  color: rgb(23, 175, 125);
+  text-decoration-line: underline;
+}

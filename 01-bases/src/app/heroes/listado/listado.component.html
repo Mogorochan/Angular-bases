@@ -1,0 +1,22 @@
+
+<h3>listado Mugiwaras!</h3>
+
+<div *ngIf="nakamaBorrado, Else noBorrado">
+  <h3 class="info">Nakama borrado:<span> {{nakamaBorrado}}</span> </h3>
+</div>
+
+<ng-template #noBorrado>
+  <h4 class="warning">No ha borrado nada</h4>
+</ng-template>
+
+<button (click)="borrarNakama()">
+    Borrar
+</button>
+
+<ul>
+  <li *ngFor="let listarNakama of nakamas; let i = index">
+    {{i + 1}}- {{listarNakama}}
+  </li>
+</ul>
+
+

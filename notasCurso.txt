@@ -66,3 +66,16 @@ Si se desea agregar dentro de otro componente:
   bootstrap: [AppComponent]
 })
 
+
+/***NG'S***
+-NgFor es ítil para imprimir duplicados en el HTML. Como es un For, para 
+hacerlo necesito de un ciclo, arreglo o algo iterable 
+-NgIf condiciona lo que se imprime en el HTML, se maneja como un IF, entoces se puede condicionar
+con Else, sí no cumple nuestra primera expresión. En el Else, se puede usar el ng-template
+para crear un Template Local. OJO: está en el lado del HTML, no de la lógica
+
+/****Modulos*****/
+El objetivo de los módulos es ayudarnos a agrupar componentes y piezas 
+de nuestra aplicación que tienen sentido entre sí. Uno de ellos es encapsular las cosas 
+y otro principal es ayudarnos con la carga perezosa (lazyLoad)
+

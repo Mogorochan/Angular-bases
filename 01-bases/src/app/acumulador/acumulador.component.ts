@@ -15,12 +15,12 @@ import { Component } from '@angular/core';
 `
 })
 export class AcumuladorComponent{
-  title = 'Ejercicio acumulador';
-  numero = 0;
+  title: string = 'Ejercicio acumulador';
+  numero: number = 0;
 
   //función(ojo, es necesario usar This acá)
 
-  base = 5;
+  base: number = 5;
 
   acumular(valor: number){
     this.numero += valor;
