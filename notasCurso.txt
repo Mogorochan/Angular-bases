@@ -66,6 +66,14 @@ Si se desea agregar dentro de otro componente:
   bootstrap: [AppComponent]
 })
 
+/****COMPONENTES CREADOS****/
+Los módulos nos permiten encapsular el código y optimizar mejor la app.
+Las declaraciones básicamente dicen qué cosas contiene este módulo.
+EXPORTS: Los export significan qué cosas quiero hacer públicas
+ o visibles fuera de este módulo.
+ IMPORTS: modulos
+
+
 
 /***NG'S***
 -NgFor es ítil para imprimir duplicados en el HTML. Como es un For, para 
