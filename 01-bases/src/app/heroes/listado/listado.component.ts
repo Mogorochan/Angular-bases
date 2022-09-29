@@ -10,7 +10,7 @@ export class ListadoComponent{
 
   borrarNakama(){
     this.nakamaBorrado = this.nakamas.shift() || '';
-}
+  }
 
 
 }

@@ -53,6 +53,8 @@ En el  @NgModule, en las declarations:
 Si se desea agregar dentro de otro componente:
     ng g c componente/nombre de archivo
     ng g c heroes/listado
+Si se quiere quitar el Test:
+    ng g c onePiece/mainPage --skip-tests 
 /*****Componentes del decorador @NgModule***/
 @NgModule({
   declarations: [ // ACÁ VAN LOS COMPONENTES
@@ -73,8 +75,6 @@ EXPORTS: Los export significan qué cosas quiero hacer públicas
  o visibles fuera de este módulo.
  IMPORTS: modulos
 
-
-
 /***NG'S***
 -NgFor es ítil para imprimir duplicados en el HTML. Como es un For, para 
 hacerlo necesito de un ciclo, arreglo o algo iterable 
@@ -87,3 +87,11 @@ El objetivo de los módulos es ayudarnos a agrupar componentes y piezas
 de nuestra aplicación que tienen sentido entre sí. Uno de ellos es encapsular las cosas 
 y otro principal es ayudarnos con la carga perezosa (lazyLoad)
 
+Para crearlo manualmente, basta con crear un archivo y poner module.ts al final: heroes.module.ts
+HAcer la creación del export class con el nombre del módulo, y a continuación, crear el @NgModule con las declarations, 
+los import, exports y los components, también es importante importantar el CommonModule para que funciones
+los NgFor, NgIf y otros métodos correctamente.
+
+Para crear los módulos de forma automática se escribe 
+    ng generate module nombre archivo
+    ng g m nombre archivo

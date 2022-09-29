@@ -49,3 +49,14 @@ button:focus{
   color: rgb(23, 175, 125);
   text-decoration-line: underline;
 }
+.row{
+  display: flex;
+}
+.col{
+  flex-grow: 1;
+  margin-right: 1px;
+}
+input{
+  display: block;
+  margin: 5px;
+}
