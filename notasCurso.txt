@@ -95,3 +95,23 @@ los NgFor, NgIf y otros métodos correctamente.
 Para crear los módulos de forma automática se escribe 
     ng generate module nombre archivo
     ng g m nombre archivo
+
+/*****EVENTOS DE JS EN ANGULAR*********/
+Cuando se vaya a llamar, en el HTML, se debe colocar la etiqueta estricta $
+    $event
+
+/*********Forms Module************/
+se debe importar la librería FormsModule en el NgModule del módulo en el que vamos a trabajar nuestro formulario.
+La ngModel directiva realizará un seguimiento del valor ingresado por el usuario 
+con cada tecla presionada, y también realizará un seguimiento del estado de validez 
+de ese control de formulario en particular solamente.
+La ngForm directiva principal luego interactuará con todas sus ngModeldirectivas secundarias y construirá un modelo 
+de todo el formulario, con todos sus valores de campo y estados de validez.
+
+/***********NgModule**********/
+
+[(ngModel)] acá utilizamos two data binding, las llaves [] son para establecer alguna propiedad;
+los parentesis () es para emitir o escuchar eventos; al utilizarlos juntos es quiero escuchar, emitir el evento 
+y que la propiedad se enlace:
+La sintaxis de enlace bidireccional de Angular es una combinación de corchetes y paréntesis, [()]. 
+La [()]sintaxis combina los corchetes del enlace de propiedades [], con los paréntesis del enlace de eventos (), de la siguiente manera.
