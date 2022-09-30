@@ -115,3 +115,6 @@ los parentesis () es para emitir o escuchar eventos; al utilizarlos juntos es qu
 y que la propiedad se enlace:
 La sintaxis de enlace bidireccional de Angular es una combinación de corchetes y paréntesis, [()]. 
 La [()]sintaxis combina los corchetes del enlace de propiedades [], con los paréntesis del enlace de eventos (), de la siguiente manera.
+
+/***Herencia del componente padre hacia el hijo********/
+En el componente hijo se agrega el decorador @Input()
