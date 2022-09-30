@@ -117,4 +117,4 @@ La sintaxis de enlace bidireccional de Angular es una combinación de corchetes 
 La [()]sintaxis combina los corchetes del enlace de propiedades [], con los paréntesis del enlace de eventos (), de la siguiente manera.
 
 /***Herencia del componente padre hacia el hijo********/
-En el componente hijo se agrega el decorador @Input()
+En el componente hijo se agrega el decorador @Input() cuando el hijo necesita emitir un valor al padre 

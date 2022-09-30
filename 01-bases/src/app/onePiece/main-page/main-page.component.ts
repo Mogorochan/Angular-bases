@@ -20,21 +20,15 @@ export class MainPageComponent{
       nombre: 'Nami',
       recompensa: '16.000.000B'
   }
-
 ];
 
-  nuevo: Personaje = {
-    nombre: 'Sanji',
-    recompensa: '77.000.000 B'
-  }
+   nuevo: Personaje = {
+    nombre: '',
+    recompensa: ''
+   }
 
-  agregar(){
-    console.log(this.nuevo);
-    this.personajes.push(this.nuevo);
-    this.nuevo = {
-      nombre: '',
-      recompensa: ''
-    }
-  }
+   agregarNuevoPersonaje(argumento: Personaje){
+    this.personajes.push(argumento);
+   }
 
 }
