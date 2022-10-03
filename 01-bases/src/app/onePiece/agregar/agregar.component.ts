@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Personaje } from '../interfaces/onePiece.interface';
+import { OnePieceService } from '../services/onePiece.service';
 
 @Component({
   selector: 'app-agregar',
@@ -12,13 +13,16 @@ export class AgregarComponent{
     nombre: 'Sanji',
     recompensa: '77.000.000 B'
   }
-  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+  /*@Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+  this.onNuevoPersonaje.emit(this.nuevo);*/
+
+constructor(private OnePieceService: OnePieceService){}
 
   agregar(){
+
+    this.OnePieceService.agregarPersonaje(this.nuevo);
+
     console.log(this.nuevo);
-
-    this.onNuevoPersonaje.emit(this.nuevo);
-
     this.nuevo = {
       nombre: '',
       recompensa: ''

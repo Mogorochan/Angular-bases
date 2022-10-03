@@ -111,10 +111,66 @@ de todo el formulario, con todos sus valores de campo y estados de validez.
 /***********NgModule**********/
 
 [(ngModel)] acá utilizamos two data binding, las llaves [] son para establecer alguna propiedad;
-los parentesis () es para emitir o escuchar eventos; al utilizarlos juntos es quiero escuchar, emitir el evento 
+los parentesis () es para emitir o escuchar eventos; al utilizarlos juntos, se pretende escuchar, emitir el evento 
 y que la propiedad se enlace:
 La sintaxis de enlace bidireccional de Angular es una combinación de corchetes y paréntesis, [()]. 
 La [()]sintaxis combina los corchetes del enlace de propiedades [], con los paréntesis del enlace de eventos (), de la siguiente manera.
+        [(ngModel)]="nuevo.nombre"
 
 /***Herencia del componente padre hacia el hijo********/
 En el componente hijo se agrega el decorador @Input() cuando el hijo necesita emitir un valor al padre 
+
+
+/*****SERVICIOS*****/
+
+Un servicio es un proveedor de datos, que mantiene lógica de acceso a ellos y operativa relacionada con el negocio 
+y las cosas que se hacen con los datos dentro de una aplicación. Los servicios serán consumidos por los componentes, 
+que delegarán en ellos la responsabilidad de acceder a la información y la realización de operaciones con los datos.
+
+Sirven como singleton, es decir, una única instancia que se va a tener lo largo de todo el módulo,
+en este caso el de onePiece
+Es una clase que tiene un decorador de tipo: @Injectable.
+La sintaxis para su generació es:
+        ng generate service nombre servicio
+        ng g 
+La sintaxis para crear el servicio es:
+    
+     @Injectable() //decorador que se debe importar desde @angular/core
+    export class OnePieceService{ //se crea la clase(en angular todo son clases, lo que difiere es el decorador) y se agrega el export para que pueda ser consumido
+        constructor(){//Se agrega el contructor
+    
+  }
+}
+
+En el módulo en que el servicio va ser consumido, se agrega el servicio en los Providers
+
+        @NgModule({
+    declarations: [
+        MainPageComponent,
+        PersonajesComponent,
+        AgregarComponent
+    ],
+    exports: [
+        MainPageComponent
+    ],
+    imports: [
+        CommonModule,
+        FormsModule
+    ],
+    providers: [
+        OnePieceService//Recordar importar el servicio
+    ]
+    })
+
+El servicio es, por decirlo así, una clase abstracta en la cual ustedes van a colocar la información
+y los métodos para interactuar con fuentes externas o para manipular el estado de la información en su aplicación.
+
+Para hacer uso del servidor, utilizamos el contructor en donde queramos inyectar sus propiedades
+(a esto se le conoce como inyección de dependencias):
+
+     constructor( private OnePieceService: OnePieceService){}
+
+Como se está inyectando la dependencia, se debe importar.
+
+OJO: Se recomienda hacer la manipulación de la información, en el servicio, no en los componentes
+
