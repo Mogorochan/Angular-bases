@@ -132,7 +132,7 @@ en este caso el de onePiece
 Es una clase que tiene un decorador de tipo: @Injectable.
 La sintaxis para su generació es:
         ng generate service nombre servicio
-        ng g 
+        ng g s nombre servicio
 La sintaxis para crear el servicio es:
     
      @Injectable() //decorador que se debe importar desde @angular/core
@@ -174,3 +174,19 @@ Como se está inyectando la dependencia, se debe importar.
 
 OJO: Se recomienda hacer la manipulación de la información, en el servicio, no en los componentes
 
+/*******Angular flex-layout********/
+Angular Flex Layout proporciona una API de diseño sofisticada utilizando Flexbox CSS + mediaQuery. 
+Este módulo proporciona a los desarrolladores de Angular funciones de diseño de componentes mediante 
+una API de diseño personalizada, observables de mediaQuery y estilos CSS DOM flexbox-2016 inyectados
+Comando para instalar:
+    npm i -s @angular/flex-layout @angular/cdk
+
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+...
+
+@NgModule({
+    ...
+    imports: [ FlexLayoutModule ],
+    ...
+});
