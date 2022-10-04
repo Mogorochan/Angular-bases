@@ -15,10 +15,13 @@
     </mat-card-content>
 
     <mat-card-actions>
-        <button mat-button color="accent">
+        <button mat-button color="accent" [routerLink]="['/heroes', listarHeroes.id]">
             Más información...
         </button>
-        <button mat-stroked-button color="accent" mat-icon-button>
+
+        <button mat-stroked-button 
+        color="accent" mat-icon-button
+        [routerLink]="['/heroes/editar', listarHeroes.id]">
             <mat-icon>edit_square</mat-icon>
         </button>
     </mat-card-actions>
