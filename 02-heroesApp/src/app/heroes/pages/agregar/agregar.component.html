@@ -23,17 +23,17 @@
 
     <mat-form-field>
       <mat-label>Primera Aparición</mat-label>
-      <input matInput type="text" [(ngModel)]="heroeObj.first_appearance"  required>
+      <input matInput type="text" [(ngModel)]="heroeObj.first_appearance">
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Personajes</mat-label>
-      <input matInput type="text" [(ngModel)]="heroeObj.characters" required>
+      <input matInput type="text" [(ngModel)]="heroeObj.characters" >
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Creador</mat-label>
-      <mat-select [(ngModel)]="heroeObj.publisher" required>
+      <mat-select [(ngModel)]="heroeObj.publisher">
         <mat-option
           *ngFor="let publicacion of publishers"
           [value]="publicacion.id">

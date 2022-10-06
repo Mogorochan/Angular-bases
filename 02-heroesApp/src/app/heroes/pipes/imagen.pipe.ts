@@ -8,7 +8,7 @@ export class ImagenPipe implements PipeTransform {
 
   transform(listarHeroes: Heroe): string {
 
-    if(!listarHeroes.id || listarHeroes.hasOwnProperty('alt_img') && listarHeroes.alt_img ){
+    if(!listarHeroes.id && listarHeroes.alt_img ){
       return `assets/no-image.png`;
     }else if(listarHeroes.alt_img){
       return listarHeroes.alt_img;
@@ -19,3 +19,5 @@ export class ImagenPipe implements PipeTransform {
   }
 
 }
+
+// || listarHeroes.hasOwnProperty('alt_img') 
