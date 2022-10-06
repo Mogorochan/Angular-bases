@@ -88,8 +88,6 @@ export class AgregarComponent implements OnInit {
           }
         }
       )
-   
-   
   }
 
   mostrarSnakbar( mensaje: string ) {
@@ -98,8 +96,4 @@ export class AgregarComponent implements OnInit {
       duration: 2500
     });
   }
-
-
 }
-
-//console.log(this.heroeObj = heroeObj, heroeObj));
