@@ -190,3 +190,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     imports: [ FlexLayoutModule ],
     ...
 });
+
+
+/****JSON server***/
+comando para instalar:
+    npm install -g json-server
+comando para levantar:
+    json-server --watch db.json
+Ojo, el Json server corre en el puerto 3000
+    http://localhost:3000/

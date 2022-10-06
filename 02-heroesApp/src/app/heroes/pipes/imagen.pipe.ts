@@ -7,7 +7,15 @@ import { Heroe } from '../interfaces/heroes.interface';
 export class ImagenPipe implements PipeTransform {
 
   transform(listarHeroes: Heroe): string {
-    return `assets/heroes/${listarHeroes.id}.jpg`;
+
+    if(!listarHeroes.id || listarHeroes.hasOwnProperty('alt_img') && listarHeroes.alt_img ){
+      return `assets/no-image.png`;
+    }else if(listarHeroes.alt_img){
+      return listarHeroes.alt_img;
+    }else{
+      
+      return `assets/heroes/${listarHeroes.id}.jpg`;
+    }
   }
 
 }
