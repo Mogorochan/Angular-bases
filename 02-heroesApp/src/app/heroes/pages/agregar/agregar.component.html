@@ -52,12 +52,22 @@
         color="primary"
         (click)="guardar()">
         <mat-icon>edit</mat-icon>
+        Guardar
+        </button>
+        <span class="spacer"></span>
+
+        <button *ngIf="heroeObj.id"
+        mat-raised-button
+        (click)="borrarHeroe()"
+        color="warn">
+        <mat-icon>remove</mat-icon>
+          Borrar
         </button>
     </div>
 
   </div>
 
   <div fxFlex="50">
-    <img [src]="heroeObj | imagen" />
+    <img [src]="heroeObj | imagen">
   </div>
 </div>
