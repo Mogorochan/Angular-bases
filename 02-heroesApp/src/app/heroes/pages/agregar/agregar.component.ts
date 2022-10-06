@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+
 import { Heroe, Publisher } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
 import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
 
 @Component({
@@ -72,11 +73,23 @@ export class AgregarComponent implements OnInit {
   }
   }
   borrarHeroe(){
-    this.dialog.open(ConfirmarComponent);
-    // this.heroesService.borrarHeroe(this.heroeObj.id!)
-    // .subscribe(resp => {
-    //   this.router.navigate(['heroes']);
-    // })
+    const dialog = this.dialog.open(ConfirmarComponent, {
+      width: '250',
+      data: this.heroeObj
+    });
+    dialog.afterClosed()
+    .pipe(
+      switchMap((result) => (result) ? this.heroesService.borrarHeroe(this.heroeObj.id!) :
+      this.router.navigate([`heroes/editar/$[this.heroeObj.id]`])))
+      .subscribe(
+        (heroe) =>{
+          if (heroe){
+            this.router.navigate(['heroes'])
+          }
+        }
+      )
+   
+   
   }
 
   mostrarSnakbar( mensaje: string ) {
