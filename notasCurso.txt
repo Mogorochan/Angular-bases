@@ -199,3 +199,20 @@ comando para levantar:
     json-server --watch db.json
 Ojo, el Json server corre en el puerto 3000
     http://localhost:3000/
+
+
+            /*******GUARDS******/
+Los protectores de ruta de Angular son interfaces proporcionadas por Angular que, cuando se implementan,
+ nos permiten controlar la accesibilidad de una ruta en función de las condiciones proporcionadas en la 
+ implementación de clase de esa interfaz.
+Estos son algunos tipos de protecciones angulares: CanActivate, CanActivateChild, CanLoad, CanDeactivate y Resolve
+
+    -(CanActivate) Antes de cargar los componentes de la ruta.
+    -(CanLoad) Antes de cargar los recursos (assets) de la ruta.
+    -(CanDeactivate) Antes de intentar salir de la ruta actual (usualmente utilizado para evitar salir de una ruta, 
+        si no se han guardado los datos).
+    -(CanActivateChild) Antes de cargar las rutas hijas de la ruta actual.
+Comando para crearlo:
+    ng g guard nombre modulo/nombre del guard
+    ng g guard auth/guards/auth
+
