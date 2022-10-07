@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Pipe } from '@angular/core';
+import { tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { Auth } from '../interfaces/auth.interface';
 
@@ -9,11 +10,18 @@ import { Auth } from '../interfaces/auth.interface';
 export class AuthService {
 
   private baseURL: string = environment.baseURL;
+  private _auth: Auth | undefined;
 
-  constructor( private http: HttpClient,
-               ) { }
+  get auth(){
+    return {...this._auth}
+  }
+
+  constructor( private http: HttpClient) { }
 
   login(){
-    return this.http.get<Auth>(`${this.baseURL}/usuarios/1`);
+    return this.http.get<Auth>(`${this.baseURL}/usuarios/1`)
+    .pipe(
+      tap( auth => this._auth = auth)
+    );
   }
 }
