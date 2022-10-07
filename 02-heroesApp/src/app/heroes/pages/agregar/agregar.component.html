@@ -1,10 +1,13 @@
 <div class=""></div>
 <h1>
-    {{ ( heroeObj.id )? 'Editar' : 'Nuevo' }}
-    Héroe
-    <small>{{ heroeObj.superhero }}</small> 
+  {{ ( heroeObj.id )? 'Editar' : 'Nuevo' }}
+  Héroe
+  <small>{{ heroeObj.superhero }}</small> 
+  <span class="spacer"></span>
+  <button mat-button color="accent" [routerLink]="['/heroes']">
+    Regresar
+  </button>
 </h1>
-
 
 <div fxLayout="row" 
      fxLayoutGap="40px" 
@@ -74,6 +77,6 @@
   </div>
 
   <div fxFlex="50">
-    <img [src]="heroeObj | imagen" >
+    <img [src]="heroeObj | imagen" onError="this.src='assets/no-image.png'" >
   </div>
 </div>

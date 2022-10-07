@@ -17,7 +17,7 @@
             <small>- {{mostrarHeroe.alter_ego}}</small>
             <mat-divider></mat-divider>
         </h2><br>
-        <img [src]="mostrarHeroe | imagen" alt="Heroe">
+        <img [src]="mostrarHeroe | imagen" alt="Heroe" onError="this.src='assets/no-image.png'">
     </div>
 
     <div fxFlex="50">
@@ -32,7 +32,7 @@
         </mat-list><br>
         
         <button mat-button 
-                color="warn"
+                color="accent"
                 (click)="regresar()">
             Regresar
         </button>

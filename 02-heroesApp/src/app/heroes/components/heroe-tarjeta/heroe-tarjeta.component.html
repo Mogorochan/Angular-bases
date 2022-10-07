@@ -4,7 +4,7 @@
         <mat-card-subtitle>{{listarHeroes.alter_ego}}</mat-card-subtitle>
     </mat-card-header>
 
-    <img mat-card-image [src]="listarHeroes | imagen">
+    <img mat-card-image [src]="listarHeroes | imagen" onError="this.src='assets/no-image.png'" alt="heroe imagen">
 
     <mat-card-content>
         <h3>{{listarHeroes.publisher}}</h3>
