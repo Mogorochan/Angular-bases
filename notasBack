@@ -1,0 +1,19 @@
+/*****NODE****/
+Inicialización: 
+    npm init -y (la y es para aceptar todo)
+
+/*****NODEMON****/
+Lo conveniente es instalarlo en modo desarrollo:
+    npm install nodemon -desarrollo
+Una vez instalado, se agrega al package.json y en Script agregar 
+las siguientes líneas:
+
+"scripts": {
+    "dev": "nodemon nombre archivo", //desarrollo
+    "start": "node nombre archivo" // produción
+  },
+Para ejecutarlo SOLO en desarrollo, se hace por medio del comando:
+    npm run dev
+Cuando ya está en de producción:
+    npm start
+
