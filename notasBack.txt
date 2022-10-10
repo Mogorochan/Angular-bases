@@ -17,3 +17,17 @@ Para ejecutarlo SOLO en desarrollo, se hace por medio del comando:
 Cuando ya está en de producción:
     npm start
 
+//*****PAQUETES Y LIBRERÍAS*******/
+
+npm i bcryptjs cors dotenv express express-validator jsonwebtoken mongoose
+
+https://www.npmjs.com/package/bcryptjs
+https://www.npmjs.com/package/cors
+https://www.npmjs.com/package/dotenv
+https://www.npmjs.com/package/express
+https://www.npmjs.com/package/express-validator
+https://www.npmjs.com/package/jsonwebtoken
+https://www.npmjs.com/package/mongoose
+
+/***Gitignore***/
+Recordar crear el archivo de .gitignore y guardar el /node_modules
