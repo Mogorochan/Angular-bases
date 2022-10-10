@@ -31,3 +31,14 @@ https://www.npmjs.com/package/mongoose
 
 /***Gitignore***/
 Recordar crear el archivo de .gitignore y guardar el /node_modules
+
+/****Controlador*****/
+
+Este es el controlador, con esto se valida la respueta del servidor
+
+app.get('/', (req, res) => {
+    res.json({
+        msg: 'somebody SAAAAAVE me!',
+        saveMeIn: 4200
+    });
+  });

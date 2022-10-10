@@ -1,18 +1,10 @@
 const express = require('express');
 
 /* 
-todo: Crear el servidor/ app express  */
+*Crear el servidor/ app express*/
 const app = express();
-
-/* 
-?Con esto se valida qué responde el servidor*/
-
-app.get('/', (req, res) => {
-    res.json({
-        msg: 'somebody SAAAAAVE me!',
-        saveMeIn: 4200
-    });
-  });
+//Rutas
+app.use('/api/auth', require('./routes/auth.routes'));
 
 const Port = process.env.Port || 4000
 app.listen(Port, ( ) => {
