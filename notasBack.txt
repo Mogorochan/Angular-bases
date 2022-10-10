@@ -42,3 +42,7 @@ app.get('/', (req, res) => {
         saveMeIn: 4200
     });
   });
+
+/****USO middlewares*****/
+primero es el path, luego los middlewares, por ultimo es el controlador de la ruta
+router.post('/'(path), (middlewares),loginUsuario (controlador));  

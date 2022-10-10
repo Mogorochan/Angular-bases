@@ -5,6 +5,9 @@ require('dotenv').config();
 /* 
 *Crear el servidor/ app express*/
 const app = express();
+//Directorio público
+app.use(express.static('public'));
+
 //Cors
 app.use(cors());
 //Lectura y parseo del body
