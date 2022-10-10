@@ -216,3 +216,24 @@ Comando para crearlo:
     ng g guard nombre modulo/nombre del guard
     ng g guard auth/guards/auth
 
+/****Operatot OF*******/
+of se utiliza para emitir argumentos como valores en una secuencia y luego completar la secuencia.
+A diferencia de from, no hace ningún aplanamiento o conversión y emite cada argumento con el mismo tipo que recibe como argumentos. 
+Si se le pasa una matriz (incluidos los objetos similares a una matriz), una promesa y un objeto iterable, 
+no se aplanará en una secuencia observable de valores. Esos argumentos se emitirán como del mismo tipo, es decir,
+ una matriz, una promesa o un objeto iterable sin ninguna conversión.
+Si necesita emitir elementos de forma asíncrona, el operador toma un planificador como segundo argumento.
+
+Más información: https://indepth.dev/reference/rxjs/operators/of
+
+
+import { of } from 'rxjs';
+        
+        of(10, 20, 30)
+        .subscribe({
+            next: value => console.log('next:', value),
+            error: err => console.log('error:', err),
+            complete: () => console.log('the end'),
+        });
+
+
