@@ -1,6 +1,7 @@
 const { response} = require('express');
 const  bcrypt = require('bcryptjs');
 const Usuario = require('../models/Usuario');
+const { generarJWT } = require('../helpers/jwt');
 
 
 const crearUsuario =  async(req, res = response) => {
@@ -9,7 +10,7 @@ const crearUsuario =  async(req, res = response) => {
 
     try {
     //Paso1. Verificar sí hay dos email's iguales
-        const usuario = await Usuario.findOne({email}); //verificación
+        const usuario = await Usuario.findOne({email}); //*verificación
 
         if (usuario) {
             return res.status(404).json({
@@ -25,7 +26,8 @@ const crearUsuario =  async(req, res = response) => {
         const salt = bcrypt.genSaltSync();
         dbUser.password = bcrypt.hashSync(password,salt);
 
-    //Generar el Jason web token (JWT)
+    //Paso 6.Generar el Jason web token (JWT)
+        const token = await generarJWT(dbUser.id, name);
     //Paso3. Crear usuario en BD
         await dbUser.save();
         
@@ -34,6 +36,7 @@ const crearUsuario =  async(req, res = response) => {
             ok: true,
             uid: dbUser.id,
             name,
+            token
         })
         
     } catch (error) {
