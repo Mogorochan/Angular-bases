@@ -1,4 +1,5 @@
 const { response} = require('express');
+const  bcrypt = require('bcryptjs');
 const Usuario = require('../models/Usuario');
 
 
@@ -20,7 +21,10 @@ const crearUsuario =  async(req, res = response) => {
     //Paso2. Crear usuario con el modelo
         const dbUser = new Usuario(req.body);
 
-    //Encriptar la contraseña(por medio del hash)
+    //Paso5. Encriptar la contraseña(por medio del hash)
+        const salt = bcrypt.genSaltSync();
+        dbUser.password = bcrypt.hashSync(password,salt);
+
     //Generar el Jason web token (JWT)
     //Paso3. Crear usuario en BD
         await dbUser.save();
