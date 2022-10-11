@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-// const { Pool, Client} = require('pg');
-// require('dotenv').config();
 
 const dbConnection = async() =>{
     try {
@@ -12,6 +10,15 @@ const dbConnection = async() =>{
         throw new Error('Error al iniciar la BD');
     }
 }
+
+module.exports= {
+    dbConnection
+}
+/*
+?Intento fallido: conexión a Postgres
+ */
+// const { Pool, Client} = require('pg');
+// require('dotenv').config();
 
 // const dbConnection = async() => {
 //     try {
@@ -32,7 +39,3 @@ const dbConnection = async() =>{
 //         throw new Error('Error al iniciar la BD');
 //     }
 // }
-
-module.exports= {
-    dbConnection
-}
