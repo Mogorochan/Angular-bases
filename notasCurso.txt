@@ -55,6 +55,8 @@ Si se desea agregar dentro de otro componente:
     ng g c heroes/listado
 Si se quiere quitar el Test:
     ng g c onePiece/mainPage --skip-tests 
+Si se quiere quitar el archivo de CSS:
+	ng g c auth/pages/login --skip-tests --inline-style
 /*****Componentes del decorador @NgModule***/
 @NgModule({
   declarations: [ // ACÁ VAN LOS COMPONENTES
@@ -95,6 +97,8 @@ los NgFor, NgIf y otros métodos correctamente.
 Para crear los módulos de forma automática se escribe 
     ng generate module nombre archivo
     ng g m nombre archivo
+Para crearlo con el routing:
+    ng g m protected --routing
 
 /*****EVENTOS DE JS EN ANGULAR*********/
 Cuando se vaya a llamar, en el HTML, se debe colocar la etiqueta estricta $
