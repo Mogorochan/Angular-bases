@@ -34,6 +34,7 @@
   body, html {
       height: 100%;
       font-family: Poppins-Regular, sans-serif;
+      background: #e7eaf2;
   }
   
   /*---------------------------------------------*/
@@ -50,7 +51,7 @@
   }
   
   a:focus {
-      outline: none !important;
+      outline: none;
   }
   
   a:hover {
@@ -89,12 +90,12 @@
   }
   
   textarea:focus, input:focus {
-    border-color: transparent !important;
+    border-color: transparent ;
   }
   
   /*---------------------------------------------*/
   button {
-      outline: none !important;
+      outline: none;
       border: none;
       background: transparent;
   }
@@ -128,9 +129,12 @@
   
   /*//////////////////////////////////////////////////////////////////
   [ login ]*/
+
+
   .limiter {
     width: 100%;
     margin: 0 auto;
+    background: transparent;
   }
   
   .container-login100 {
@@ -148,6 +152,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+   
   }
   
   .wrap-login100 {
