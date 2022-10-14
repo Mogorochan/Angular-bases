@@ -36,6 +36,7 @@ const crearUsuario =  async(req, res = response) => {
             ok: true,
             uid: dbUser.id,
             name,
+            email,
             token
         })
         
@@ -57,7 +58,7 @@ const loginUsuario = async(req, res = response) => {
         const dbUser = await Usuario.findOne({email});
 
         if (!dbUser) {
-            return res.status(404).json({
+            return res.status(400).json({
                 ok: false,
                 msg: "El email no es válido o no existe, favor revisárlo"
             });
@@ -65,7 +66,7 @@ const loginUsuario = async(req, res = response) => {
     //Confirmar si el password hace match
         const validPassword = bcrypt.compareSync(password, dbUser.password);
         if (!validPassword) {
-            return res.status(404).json({
+            return res.status(400).json({
                 ok: false,
                 msg: "La contraseña no es válida o no existe, favor revisárlo"
             });
@@ -77,6 +78,7 @@ const loginUsuario = async(req, res = response) => {
             ok: true,
             uid: dbUser.id,
             name: dbUser.name,
+            email: dbUser.email,
             token
         });
 
@@ -91,15 +93,20 @@ const loginUsuario = async(req, res = response) => {
 
 const revalidarToken =  async(req, res = response) => {
 
-    const { uid, name } = req;
+    const { uid} = req;
+
+    //Leer la BD
+    const dbUser = await Usuario.findById(uid);
+
 
     // Generar el JWT
-    const token = await generarJWT( uid, name );
+    const token = await generarJWT( uid, dbUser.name );
 
     return res.json({
         ok: true,
         uid, 
-        name,
+        name: dbUser.name,
+        email: dbUser.email,
         token
     });
 
