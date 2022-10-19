@@ -4,7 +4,8 @@ Inicialización:
 
 /*****NODEMON****/
 Lo conveniente es instalarlo en modo desarrollo:
-    npm install nodemon -desarrollo
+    npm install -g nodemon //Global	
+    npm install --save-dev nodemon //Devs
 Una vez instalado, se agrega al package.json y en Script agregar 
 las siguientes líneas:
 
